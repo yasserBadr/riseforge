@@ -1,6 +1,6 @@
 # RiseForge
 
-A Mighty-style extension for **Articulate Rise 360** that adds interactive blocks, mods, powerups, an assistant sidebar, and an SDK — built with performance and UI polish as the priority.
+ extension for **Articulate Rise 360** that adds interactive blocks, mods, powerups, an assistant sidebar, and an SDK — built with performance and UI polish as the priority.
 
 Buildless **Manifest V3** extension. No Angular, no bundlers, no vendor bundles — plain ES modules + native Web Components (`rf-*`), lazy-loaded per feature route.
 
