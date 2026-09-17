@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "RiseForge",
+  "version": "1.0.0",
+  "description": "A faster, cleaner way to build custom content in Articulate Rise 360. Custom blocks, mods, powerups and a polished assistant.",
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "RiseForge",
+    "default_popup": "extension-app/pages/assistant/popup.html"
+  },
+  "background": {
+    "service_worker": "extension-scripts/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": ["extension-scripts/rise-router-script.js"],
+      "matches": ["https://*.articulate.com/*"],
+      "run_at": "document_idle"
+    },
+    {
+      "js": ["extension-scripts/extension-installed-script.js"],
+      "matches": [
+        "https://*.maestrolearning.com/*",
+        "https://*.designwithmighty.com/*"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://*.articulate.com/*",
+    "https://*.articulateusercontent.com/*",
+    "https://*.articulateusercontent.eu/*"
+  ],
+  "permissions": ["storage"],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://*.articulate.com/*",
+        "https://*.articulateusercontent.com/*",
+        "https://*.articulateusercontent.eu/*"
+      ],
+      "resources": [
+        "extension-app/*",
+        "assets/*",
+        "extension-scripts/*",
+        "sdk/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+:root, #rf-host {
+  --rf-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --rf-mono: "SF Mono", "Cascadia Code", Consolas, Menlo, monospace;
+
+  --rf-primary: #6d5df6;
+  --rf-primary-hover: #5b48e8;
+  --rf-primary-soft: rgba(109, 93, 246, 0.12);
+  --rf-primary-contrast: #ffffff;
+
+  --rf-surface: #ffffff;
+  --rf-surface-raised: #ffffff;
+  --rf-surface-sunken: #f6f7fb;
+  --rf-surface-hover: #f0f1f7;
+
+  --rf-text: #1c1e26;
+  --rf-text-secondary: #565a6b;
+  --rf-text-muted: #8a8fa3;
+  --rf-border: #e2e4ee;
+  --rf-border-strong: #c9cddd;
+
+  --rf-success: #1aa179;
+  --rf-success-soft: rgba(26, 161, 121, 0.12);
+  --rf-warning: #c97b12;
+  --rf-warning-soft: rgba(201, 123, 18, 0.14);
+  --rf-danger: #d9404c;
+  --rf-danger-soft: rgba(217, 64, 76, 0.1);
+
+  --rf-focus: rgba(109, 93, 246, 0.4);
+
+  --rf-radius-xs: 4px;
+  --rf-radius-sm: 7px;
+  --rf-radius-md: 10px;
+  --rf-radius-lg: 14px;
+  --rf-radius-full: 999px;
+
+  --rf-space-1: 4px;
+  --rf-space-2: 8px;
+  --rf-space-3: 12px;
+  --rf-space-4: 16px;
+  --rf-space-5: 20px;
+  --rf-space-6: 24px;
+  --rf-space-8: 32px;
+
+  --rf-shadow-sm: 0 1px 2px rgba(28, 30, 38, 0.06), 0 1px 3px rgba(28, 30, 38, 0.08);
+  --rf-shadow-md: 0 4px 10px rgba(28, 30, 38, 0.08), 0 2px 4px rgba(28, 30, 38, 0.06);
+  --rf-shadow-lg: 0 12px 32px rgba(28, 30, 38, 0.16), 0 4px 8px rgba(28, 30, 38, 0.08);
+  --rf-shadow-glow: 0 0 0 4px var(--rf-focus);
+
+  --rf-duration-fast: 120ms;
+  --rf-duration: 200ms;
+  --rf-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hidden { display: none !important; }
+.rf-sr-only {
+  position: absolute; width: 1px; height: 1px;
+  clip-path: inset(50%); overflow: hidden;
+}
+
+.rf-scrollbar::-webkit-scrollbar { width: 10px; height: 10px; }
+.rf-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--rf-border-strong); border-radius: 8px;
+  border: 2px solid transparent; background-clip: content-box;
+}
+.rf-scrollbar::-webkit-scrollbar-track { background: transparent; }
+
+@keyframes rf-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rf-slide-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes rf-slide-in-right { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+@keyframes rf-pop { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: none; } }
+@keyframes rf-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+.rf-anim-in { animation: rf-fade-in var(--rf-duration) var(--rf-ease) both; }
+.rf-anim-up { animation: rf-slide-up var(--rf-duration) var(--rf-ease) both; }
+.rf-anim-right { animation: rf-slide-in-right var(--rf-duration) var(--rf-ease) both; }
+.rf-anim-pop { animation: rf-pop var(--rf-duration) var(--rf-ease) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
